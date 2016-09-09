@@ -1,0 +1,18 @@
+<div>Most recent search:</div>
+<div><%= params[:place_category] %></div>
+<div><%= params[:user_lat] %></div>
+<div><%= params[:user_lng] %></div>
+
+<hr>
+
+<%= form_tag(root_path, id: 'search-form' ) do %>
+  <%= label_tag :place_category, 'Place category' %>
+  <%= text_field_tag :place_category %>
+  <br><br>
+  Don't fill in below inputs (geolocation JavaScript will do it for you)
+  <br>
+  <%= text_field_tag :user_lat %>
+  <%= text_field_tag :user_lng %>
+  <br><br><br>
+  <%= submit_tag 'Search', :name => nil %>
+<% end %>
